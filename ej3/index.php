@@ -18,12 +18,27 @@ if(isset($a)){
 		rand(1,6),	
 	];
 	
-	echo '<pre>';
-	print_r($f);
-	echo '</pre>';
+	//$f=[1,1,1];
 	
 	foreach($f as $fruta){
 		echo '<img src="'.$fruta.'.jpg" style="width:80px">';
 	}
+	
+	$p=0;
+	
+	if($f[0]==1 or $f[1]==1 or $f[2]==1)
+		$p=$a;
+	
+	if( 
+		( $f[0]==1 and $f[1]==1 ) or
+		( $f[0]==1 and $f[2]==1 ) or
+		( $f[1]==1 and $f[2]==1 )
+	) $p=4*$a;
+	
+	if( 
+		( $f[0]==1 and $f[1]==1 and $f[2]==1)
+	) $p=10*$a;		
+	
+	echo '<div>Has ganado '.$p.' €</div>';
 	
 }
