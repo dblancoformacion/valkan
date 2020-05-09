@@ -1,11 +1,11 @@
 <form method="post">
-	<input name="n">
+	<input name="n" autofocus>
 	<button>Apostar</button>
 </form>
 
 <?php
 
-if(isset($_POST['n'])){
+if(isset($_POST['n']) and $_POST['n']>0){
 	$a=$_POST['n'];
 	echo '<div>Has apostado '.$a.' €</div>';
 }
@@ -23,7 +23,7 @@ if(isset($a)){
 	echo '</pre>';
 	
 	foreach($f as $fruta){
-		echo '<img src="'.$fruta.'.png">';
+		echo '<img src="'.$fruta.'.jpg" style="width:80px">';
 	}
 	
 }
