@@ -7,64 +7,32 @@
 
 //echo $_POST['n'];
 
-$a=18;
-if(isset($_POST['n']) and $_POST['n']>0){
+$a=5;
+if(
+	isset($_POST['n'])
+	and $_POST['n']>0
+	and $_POST['n']<=30
+){
 	$a=$_POST['n'];
 }
 else{
 	echo 'No has enviado ningún dato';
-	//exit();
+	exit();
 }
-
-echo $a;
-
-echo '<pre>';
-
-echo '   *<br/>';
-echo '  * *<br/>';
-echo ' *   *<br/>';
-echo '*     *<br/>';
-
-echo '</pre>';
 
 echo '<pre>';
 for($i=$a-1;$i>=0;$i=$i-1){
-	echo $i;
+	//echo '$i='.$i;
 	for($j=0;$j<$i;$j=$j+1){
 		echo ' ';
 	}
 	echo '*';
+	if($i<$a-1){
+		for($j=1;$j<2*($a-1-$i);$j++){
+			echo ' ';
+		}
+		echo '*';
+	}
 	echo '<br/>';
 }
 echo '</pre>';
-
-// tabla del 2
-
-for($i=0;$i<=10;$i=$i+1){
-	echo '2*'.$i.'='.(2*$i);
-	echo '<br/>';
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
